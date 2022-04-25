@@ -1,12 +1,10 @@
 # Password Locker
 
+This is a Python application that allows a user to generate and store passwords for various accounts.
+
 # Author 
 
 [Joyce Nguttu](https://github.com/joycodes)
-
-## Description
-
-This is an application to help manage passwords of given credentials given their usernames too.
 
 ### Installation
 
@@ -40,8 +38,8 @@ Since there is no database to support the app, once you exit or log out of a ses
 
 ## Technologies used
 
- Python 3.10
- PyperClip
+* Python 3.10
+* PyperClip
 
 ## Contact Information 
 
