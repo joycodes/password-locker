@@ -1,6 +1,8 @@
 # Password Locker
 
-Author Joyce Nguttu.
+# Author 
+
+[Joyce Nguttu](https://github.com/joycodes)
 
 ## Description
 
@@ -40,6 +42,10 @@ Since there is no database to support the app, once you exit or log out of a ses
 
  Python 3.10
  PyperClip
+
+## Contact Information 
+
+If you have any question or contributions, please contact me on LinkedIn at [https://www.linkedin.com/in/jnguttu/]
 
 ## License
 
