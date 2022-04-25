@@ -3,30 +3,7 @@ from user import User
 from credentials import Credentials
 
 # functions that add credentials
-def create_credentials(username_cred,password_cred):
-    '''
-    function to create a new credential
-    '''
-    new_credentials = Credentials (username_cred,password_cred)
-    return new_credentials
 
-def save_credentials(credentials):
-    '''
-    function to save new credentials
-    '''
-    credentials.save_credentials
-
-def find_credentials(cls, username):
-    '''
-    function to find a credential given a username
-    '''
-    return Credentials.find_credentials_by_username(username)
-
-def delete_credentials(credentials):
-    '''
-    function to delete a credential
-    '''
-    return Credentials.delete_credentials(credentials)
 
 def create_new_credentials(account_name, account_username, account_password):
     """
@@ -424,3 +401,24 @@ def main():
 
 if __name__ == '__main__':
     main()
+    if selected == "1":
+                            while True:    
+                                choice = input("Add credential: y/n"+"\n")
+                                if choice == "y":
+                                    username_cred = input("enter credential username: "+"\n")
+                                    pwd_generate = input("Do you want a password generated for you: y/n"+"\n")
+
+                                    if pwd_generate == "y":
+                                        password_cred = random.randint(11111,111111)
+                                        print (f"username: {username_cred}" + "\n" + f"password: {password_cred}"+"\n")
+                                    elif pwd_generate == "n":   
+                                        password_cred = input("enter credential password: ")
+                                        print (f"username: {username_cred}" + "\n" + f"password: {password_cred}"+"\n")
+                                    else:
+                                        print("Enter with a y or n")
+                                    save_credentials(create_credentials(username_cred,password_cred))
+                                elif choice == "n":
+                                    break
+                                else:
+                                    print("Enter with a y or n")    
+if __name__ == "__main__":
