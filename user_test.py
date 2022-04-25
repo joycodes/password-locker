@@ -20,13 +20,6 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.new_user.user_name, "NewUser")
         self.assertEqual(self.new_user.password, "qwerty123")
 
-
- x = input("enter your username: ")
-        y = input("enter password: ")
-
-        self.new_user = User(x,y)
-        self.new_user = User("johndoe","232323")
-
     def test_save_user(self):
         """
         test if user object if saved in user_list
