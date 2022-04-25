@@ -401,24 +401,43 @@ def main():
 
 if __name__ == '__main__':
     main()
-    if selected == "1":
-                            while True:    
-                                choice = input("Add credential: y/n"+"\n")
-                                if choice == "y":
-                                    username_cred = input("enter credential username: "+"\n")
-                                    pwd_generate = input("Do you want a password generated for you: y/n"+"\n")
+  if selected == "2":
+                            while True:
+                                print("This are all your credentails below: ")
 
-                                    if pwd_generate == "y":
-                                        password_cred = random.randint(11111,111111)
-                                        print (f"username: {username_cred}" + "\n" + f"password: {password_cred}"+"\n")
-                                    elif pwd_generate == "n":   
-                                        password_cred = input("enter credential password: ")
-                                        print (f"username: {username_cred}" + "\n" + f"password: {password_cred}"+"\n")
-                                    else:
-                                        print("Enter with a y or n")
-                                    save_credentials(create_credentials(username_cred,password_cred))
-                                elif choice == "n":
-                                    break
+                                if display_credentials():
+                                    for credentials in display_credentials():
+                                        print(f"Username: {credential.username_cred}"+"\n"
+                                              +f"Password: {credential.password_cred}" +"\n")
+
                                 else:
-                                    print("Enter with a y or n")    
-if __name__ == "__main__":
+                                    print("\n"+ f"{login_username} you dont have any credentials saved yet"
+                                          +"\n")       
+
+                                menu = input("Go back to Menu: y/n"+"\n").casefold()
+                                if menu is "y":
+                                    break
+                                elif menu == "n":
+                                    continue
+                                else:
+                                    print("enter with a y or n")
+
+                        #search a credential by entering a username
+                        if selected == "4":
+                            while True:
+                                search = input("Enter username of credential you want to delete: "+"\n")
+
+                                if credentials_exists(search):
+                                    found_credential = search_credentials(search)
+                                    print(f"Username: {found_credential.username_cred}"+"\n"+
+                                          f"Password: {found_credential.password_cred}")
+                                    delete = input("Delete it: y/n ?"+"\n").casefold()
+                                    if delete == "y":
+                                        delete_credentials(found_credential)
+                                        print("Credential has been deleted successfully!!")
+                                        break
+                                    elif delete == "n":
+                                        continue
+                                else:
+                                    print("The Searched credential does not exist")
+                                    break  
