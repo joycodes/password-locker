@@ -44,20 +44,6 @@ class TestCredentials(unittest.TestCase):
         """
         Credentials.credentials_list = []
 
-         def test_search_credentials(self):
-        '''
-        test to ensure that credentials can be found with a username
-        '''
-        acc_name2 = input("enter another username: ")
-        acc_password2 = input("enter another password: ")
-        credential_search = input("enter username to search cred: ")
-
-        self.new_credentials.save_credentials()
-        test_credentials = Credentials(acc_name2,acc_password2)
-        test_credentials.save_credentials()     
-
-        found_credential = Credentials.find_credentials_by_username(credential_search) 
-        self.assertEqual(found_credential.password_cred,test_credentials.password_cred)  
 
     def test_delete_credentials(self):
         """
